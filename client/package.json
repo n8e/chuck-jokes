@@ -32,9 +32,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "apollo": "^2.5.3",
-    "artillery": "^1.6.0-26",
-    "jest-dom": "^3.0.0",
-    "react-testing-library": "^5.4.4"
+    "artillery": "^1.6.0-26"
   }
 }
