@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 
 import { unit } from '../styles';
 
-export default () => {
-
+const Header = () => {
   return (
     <StyledHeader>
       <h1>Chuck Norris Jokes</h1>
@@ -28,3 +27,5 @@ const StyledHeader = styled.div`
   text-decoration: none;
   width: 100%;
 `;
+
+export default Header;
