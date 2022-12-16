@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { gql, useQuery } from '@apollo/client';
 
 import { JokeCard, Loading } from '../components';
 
@@ -13,19 +12,20 @@ export const JOKE_BY_CATEGORY = gql`
   }
 `;
 
-export default function Joke({ category }) {
-  return (
-    <Query query={JOKE_BY_CATEGORY} variables={{category}}>
-      {({ data, loading, error }) => {
-        if (loading) return <Loading />;
-        if (error) return <p> ERROR </p>
+const Joke = ({ category }) => {
+  const { loading, error, data } = useQuery(JOKE_BY_CATEGORY, { variables: { category } });
 
-        return (
-          <Fragment>
-            <JokeCard value={data.joke.value} />
-          </Fragment>
-        );
-      }}
-    </Query>
+  return (
+    <>
+      {loading && <Loading />}
+      {error && (<p> ERROR </p>)}
+      {data && (
+        <Fragment>
+          <JokeCard value={data.joke.value} />
+        </Fragment>
+      )}
+    </>
   );
-}
+};
+
+export default Joke;

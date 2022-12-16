@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 
 import { unit } from '../styles';
 
-export default ({ categories, onChangeHandler }) => {
-
+const CategoryDropDown = ({ categories, onChangeHandler }) => {
   return (
     <StyledSelectContainer>
       <h4>Select a joke category</h4>
@@ -44,3 +43,5 @@ const StyledSelect = styled.select`
   margin-top: ${unit * 2}px;
   width: 100%;
 `;
+
+export default CategoryDropDown;

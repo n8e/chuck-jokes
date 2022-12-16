@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 
 import { unit } from '../styles';
 
-export default ({ value }) => {
-
+const JokeCard = ({ value }) => {
   return (
     <StyledDiv>
       <p>{value}</p>
@@ -28,3 +27,5 @@ const StyledDiv = styled.div`
   text-decoration: none;
   width: 40%;
 `;
+
+export default JokeCard;

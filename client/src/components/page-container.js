@@ -21,7 +21,7 @@ const Container = styled.div`
   padding-bottom: ${unit * 5};
 `;
 
-export default function PageContainer(props) {
+const PageContainer = (props) => {
   return (
     <Fragment>
       <Header />
@@ -30,3 +30,5 @@ export default function PageContainer(props) {
     </Fragment>
   );
 }
+
+export default PageContainer;
